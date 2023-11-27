@@ -12,7 +12,8 @@ const NewsFeedEradicator = (store: Store) => {
 	const footerText = 'News Feed Eradicator';
 
 	const onShowInfoPanel = () => {
-		store.dispatch({ type: ActionType.UI_OPTIONS_SHOW });
+		// do nothing
+		// store.dispatch({ type: ActionType.UI_OPTIONS_SHOW });
 	};
 
 	const link = h('a.nfe-info-link', { on: { click: onShowInfoPanel } }, [
