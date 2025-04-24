@@ -1,5 +1,6 @@
 import instagramCss from './instagram.str.css';
 import twitterCss from './twitter.str.css';
+import linkedinCss from './linkedin.str.css';
 import githubCss from './github.str.css';
 
 export type SiteId =
@@ -15,7 +16,7 @@ export type SiteId =
 export const Sites: Record<SiteId, Site> = {
 	facebook: {
 		label: 'Facebook',
-		domain: 'facebook.com',
+		domain: ['facebook.com'],
 		paths: [
 			'/',
 			'/home.php',
@@ -33,33 +34,39 @@ export const Sites: Record<SiteId, Site> = {
 	},
 	instagram: {
 		label: 'Instagram',
-		domain: 'instagram.com',
+		domain: ['instagram.com'],
 		paths: ['/'],
 		origins: ['http://www.instagram.com/*', 'https://www.instagram.com/*'],
 		css: instagramCss,
 	},
 	twitter: {
-		label: 'Twitter',
-		domain: 'twitter.com',
+		label: 'Twitter/X',
+		domain: ['twitter.com', 'x.com'],
 		paths: ['/home', '/compose/tweet'],
-		origins: ['http://twitter.com/*', 'https://twitter.com/*'],
+		origins: [
+			'http://twitter.com/*',
+			'https://twitter.com/*',
+			'http://x.com/*',
+			'https://x.com/*',
+		],
 		css: twitterCss,
 	},
 	youtube: {
 		label: 'YouTube',
-		domain: 'youtube.com',
+		domain: ['youtube.com'],
 		paths: ['/', '/feed/trending'],
 		origins: ['https://www.youtube.com/*'],
 	},
 	linkedin: {
 		label: 'LinkedIn',
-		domain: 'linkedin.com',
+		domain: ['linkedin.com'],
 		paths: ['/', '/feed/'],
 		origins: ['http://www.linkedin.com/*', 'https://www.linkedin.com/*'],
+		css: linkedinCss,
 	},
 	reddit: {
 		label: 'Reddit',
-		domain: 'reddit.com',
+		domain: ['reddit.com'],
 		paths: ['/', '/r/all/', '/r/popular/']
 			.map((i) => [
 				i + '',
@@ -79,13 +86,13 @@ export const Sites: Record<SiteId, Site> = {
 	},
 	hackernews: {
 		label: 'Y Combinator News (HN)',
-		domain: 'news.ycombinator.com',
+		domain: ['news.ycombinator.com'],
 		paths: ['/', '/news'],
 		origins: ['https://news.ycombinator.com/*'],
 	},
 	github: {
 		label: 'Github',
-		domain: 'github.com',
+		domain: ['github.com'],
 		paths: ['/', '/dashboard'],
 		origins: ['https://github.com/*'],
 		css: githubCss,
@@ -100,7 +107,7 @@ export type Site = {
 	origins: string[];
 
 	// Will be enabled for any hostnames containing this value
-	domain: string;
+	domain: string[];
 
 	// Will only be enabled for these paths
 	paths: string[];

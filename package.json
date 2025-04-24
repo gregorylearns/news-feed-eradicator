@@ -5,7 +5,7 @@
 	"description": "Find yourself spending too much time on Facebook? Eradicate distractions by replacing your entire news feed with an inspiring quote",
 	"author": "Jordan West",
 	"license": "MIT",
-	"version": "2.2.5",
+	"version": "2.3.1",
 	"scripts": {
 		"format": "prettier --write \"./src\"",
 		"check": "tsc --noEmit"
@@ -23,7 +23,7 @@
 		"rollup-plugin-string": "^3.0.0",
 		"snabbdom": "^0.7.2",
 		"tslib": "^1.9.3",
-		"typescript": "^3.8.3"
+		"typescript": "^5.4.5"
 	},
 	"dependencies": {
 		"@types/node": "^8.10.36"

@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- No unreleased changes yet
+- No unreleased changes
+
+## [2.2.7] - 2024-06-09
+
+- Fix x.com
+
+## [2.2.6] - 2024-03-02
+
+- Fix new Reddit
+- Fix non-English Twitter/X and prepare for redirect to x.com
 
 ## [2.2.5] - 2023-05-09
 
